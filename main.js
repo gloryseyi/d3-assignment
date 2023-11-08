@@ -43,6 +43,17 @@ d3.json('uk_map.json').then(
                 .attr("cy", d => projection([d.lng, d.lat])[1])
                 .attr("r", d => d.Population/10_000)
                 .attr("fill", "tomato")
+                .on("mouseover", function(e, d) {
+                    tooltip.classed("visible", false).html(
+                    `Town: <strong>${d.Town}</strong>
+                    <br/>
+                    Population: <strong>${d.Population.toLocaleString()}</strong>
+                    <br/>
+                    County: <strong>${d.County}</strong>`
+                    ).style("left", (e.pageX) + "px")
+                    .style("top", (e.pageY) + "px")
+                    
+                }).on("mouseout", () => tooltip.classed("visible", true));
             }
         );
     }
