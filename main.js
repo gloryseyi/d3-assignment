@@ -7,6 +7,12 @@ const map_svg = canvas
     .attr("height", height)
     .attr("width", width)
 
+const tooltip = d3
+    .select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .classed("visible", true)
+
 const g = map_svg.append("g")
 const projection = d3.geoMercator()
 
