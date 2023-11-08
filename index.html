@@ -8,7 +8,20 @@
 </head>
 <body>
 
-    <div class="canvas"></div>
+    <div class="flex-container">
+        <div>
+            <div>
+                <input type="range" id="range" min="1" max="500" value="50" oninput="setTownLimit(this.value)" />
+                <label>How many towns</label>
+            </div>
+            <button class="button" type="button">Load more towns</button>
+            <p>
+                Number of towns selected: <span>50</span>
+            </p>
+        </div>
+        <div class="canvas">
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
