@@ -13,6 +13,14 @@ const tooltip = d3
     .attr("class", "tooltip")
     .classed("visible", true)
 
+const span = d3.select("span")
+
+let townLimit;
+function setTownLimit(value){
+    townLimit = value
+    span.text(townLimit)
+}
+
 const g = map_svg.append("g")
 const projection = d3.geoMercator()
 
